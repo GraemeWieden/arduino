@@ -614,7 +614,7 @@ bool RCSwitch::receiveProtocol1(unsigned int changeCount)
 		}
 	}
 	code = code >> 1;
-	if (changeCount >47) 
+	if (changeCount >45) 
 	{
 		if(code>0)
 		{
