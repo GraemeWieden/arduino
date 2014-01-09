@@ -5,8 +5,10 @@
 SwannProtocolEncoder::SwannProtocolEncoder(int nPulseLength)
 {
 	m_nCode = 0;
-	m_nPulseLength = nPulseLength;
-	m_nTriplePulseLength = m_nPulseLength * 3;
+  // m_nPulseLength = nPulseLength;
+  m_nPulseLength = 500;
+  //m_nTriplePulseLength = m_nPulseLength * 3;
+  m_nTriplePulseLength = 1500;
 }
 
 void SwannProtocolEncoder::setCode(unsigned long long nCode)
@@ -23,7 +25,8 @@ void SwannProtocolEncoder::encode(RFPacket* pPacket)
 {
 	pPacket->reset();
 
-	m_nCode <<= 8;
+	// 23 bit code needs to be shifted 9 bits to the left so top bit is at MSB
+  m_nCode <<= 9;
 
 	// Add data
 	for (int i = 0; i < 23; i++)

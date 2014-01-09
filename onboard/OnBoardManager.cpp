@@ -169,6 +169,8 @@ void OnBoardManager::handle(NinjaPacket* pPacket)
 			case ENCODING_SWANN:
 				m_encoder = new SwannProtocolEncoder(pPacket->getTiming());
 				break;	
+      default:
+        return;
 		}
 		
 		if(pPacket->isDataInArray())
@@ -179,7 +181,7 @@ void OnBoardManager::handle(NinjaPacket* pPacket)
 		//m_encoder->setCode(pPacket->getData());
 		m_encoder->encode(&m_PacketTransmit);
 		
-		m_Transmitter.send(&m_PacketTransmit, 5);
+		m_Transmitter.send(&m_PacketTransmit, 10);
 		delete m_encoder;
 		m_Receiver.start();
 	}
