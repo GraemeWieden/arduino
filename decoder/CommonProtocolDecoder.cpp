@@ -54,7 +54,7 @@ boolean CommonProtocolDecoder::decode(RFPacket* pPacket)
 void CommonProtocolDecoder::fillPacket(NinjaPacket* pPacket)
 {
 	pPacket->setEncoding(ENCODING_COMMON);
-	pPacket->setTiming(m_nPulseLength);
+	pPacket->setTiming(m_nPulseLength / 20 * 20);
 	pPacket->setType(TYPE_DEVICE);
 	pPacket->setGuid(0);
 	pPacket->setDevice(ID_ONBOARD_RF);

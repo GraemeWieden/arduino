@@ -13,8 +13,9 @@ boolean SwannProtocolDecoder::decode(RFPacket* pPacket)
 		return false;
 
 	// Pulse length should be end-gap divided by 31
-	m_nPulseLength = pPacket->get(pPacket->getSize() - 1) / 31;
-	m_nCode = 0;
+  // m_nPulseLength = pPacket->get(pPacket->getSize() - 1) / 31;
+  m_nPulseLength = 500;
+  m_nCode = 0;
 
 	// 50% tolerance, quite a lot, could/ be implemented more efficient
 	word nTolerance = m_nPulseLength * 0.5;
