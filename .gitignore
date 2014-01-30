@@ -1,2 +1,9 @@
 *.bak
 *.DS_Store
+/NinjaBlock/Visual Micro
+/NinjaBlock/NinjaBlock.sdf
+/NinjaBlock/NinjaBlock.sln
+/NinjaBlock/NinjaBlock.v12.suo
+/NinjaBlock/NinjaBlock.vcxproj
+/NinjaBlock/NinjaBlock.vcxproj.filters
+/.gitattributes
