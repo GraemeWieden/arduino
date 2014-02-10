@@ -25,8 +25,8 @@
 #include "../decoder/bOutDProtocolDecoder.h"
 #include "../encoder/bOutDProtocolEncoder.h"
 
-#include "../decoder/SwannProtocolDecoder.h"
-#include "../encoder/SwannProtocolEncoder.h"
+#include "../decoder/SwannDC810BProtocolDecoder.h"
+#include "../encoder/SwannDC810BProtocolEncoder.h"
 
 extern NinjaLED leds;
 
@@ -86,7 +86,7 @@ void OnBoardManager::check()
 				break;
 				
 				case 8:
-				m_Decoder = new SwannProtocolDecoder();
+        m_Decoder = new SwannDC810BProtocolDecoder();
 				break;			
 			}
 			
@@ -167,7 +167,7 @@ void OnBoardManager::handle(NinjaPacket* pPacket)
 				m_encoder = new bOutDProtocolEncoder(pPacket->getTiming());
 				break;	
 			case ENCODING_SWANN:
-				m_encoder = new SwannProtocolEncoder(pPacket->getTiming());
+				m_encoder = new SwannDC810BProtocolEncoder(pPacket->getTiming());
 				break;	
       default:
         return;

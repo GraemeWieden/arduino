@@ -38,4 +38,4 @@ Home Easy Power sockets - Encoding 0x04
 Oregon Scientific weather station - 0x05
 Aldi Power socket Indoor - 0x06
 Aldi Power socket outdoor - 0x07
-Swann door chime - 0x08
+Swann DC810B door chime - 0x08

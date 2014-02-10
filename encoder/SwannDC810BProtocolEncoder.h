@@ -1,9 +1,9 @@
-#ifndef SWANNPROTOCOLENCODER_H
-#define SWANNPROTOCOLENCODER_H
+#ifndef SWANNDC810BPROTOCOLENCODER_H
+#define SWANNDC810BPROTOCOLENCODER_H
 
 #include "Encoder.h"
 
-class SwannProtocolEncoder :
+class SwannDC810BProtocolEncoder :
 	public Encoder
 {
 private:
@@ -12,7 +12,7 @@ private:
 	int				m_nTriplePulseLength;
 
 public:
-	SwannProtocolEncoder(int nPulseLength);
+  SwannDC810BProtocolEncoder(int nPulseLength);
 
 	void	setCode(unsigned long long nCode);
 	void	encode(RFPacket* pPacket);

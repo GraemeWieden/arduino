@@ -1,8 +1,8 @@
-#include "SwannProtocolEncoder.h"
+#include "SwannDC810BProtocolEncoder.h"
 
 #define TOPBIT		0x80000000
 
-SwannProtocolEncoder::SwannProtocolEncoder(int nPulseLength)
+SwannDC810BProtocolEncoder::SwannDC810BProtocolEncoder(int nPulseLength)
 {
 	m_nCode = 0;
   // m_nPulseLength = nPulseLength;
@@ -11,17 +11,17 @@ SwannProtocolEncoder::SwannProtocolEncoder(int nPulseLength)
   m_nTriplePulseLength = 1500;
 }
 
-void SwannProtocolEncoder::setCode(unsigned long long nCode)
+void SwannDC810BProtocolEncoder::setCode(unsigned long long nCode)
 {
 	m_nCode = (unsigned long)nCode;
 }
 
-void SwannProtocolEncoder::setCode(byte* dataPointer, byte pos)
+void SwannDC810BProtocolEncoder::setCode(byte* dataPointer, byte pos)
 {
 	return;
 }
 
-void SwannProtocolEncoder::encode(RFPacket* pPacket)
+void SwannDC810BProtocolEncoder::encode(RFPacket* pPacket)
 {
 	pPacket->reset();
 

@@ -1,13 +1,13 @@
-#include "SwannProtocolDecoder.h"
+#include "SwannDC810BProtocolDecoder.h"
 
 #include "../common/Ninja.h"
 
-SwannProtocolDecoder::SwannProtocolDecoder()
+SwannDC810BProtocolDecoder::SwannDC810BProtocolDecoder()
 {
 	m_nPulseLength = 0;
 }
 
-boolean SwannProtocolDecoder::decode(RFPacket* pPacket)
+boolean SwannDC810BProtocolDecoder::decode(RFPacket* pPacket)
 {
 	if(pPacket->getSize() != 48)
 		return false;
@@ -52,7 +52,7 @@ boolean SwannProtocolDecoder::decode(RFPacket* pPacket)
 	return (m_nCode != 0);
 }
 
-void SwannProtocolDecoder::fillPacket(NinjaPacket* pPacket)
+void SwannDC810BProtocolDecoder::fillPacket(NinjaPacket* pPacket)
 {
 	pPacket->setEncoding(ENCODING_SWANN);
 	pPacket->setTiming(m_nPulseLength);

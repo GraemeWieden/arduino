@@ -1,9 +1,9 @@
-#ifndef SWANNPROTOCOLDECODER_H
-#define SWANNPROTOCOLDECODER_H
+#ifndef SWANNDC810BPROTOCOLDECODER_H
+#define SWANNPDC810BROTOCOLDECODER_H
 
 #include "Decoder.h"
 
-class SwannProtocolDecoder :
+class SwannDC810BProtocolDecoder :
 	public Decoder
 {
 private:
@@ -11,7 +11,7 @@ private:
 	unsigned long long	m_nCode;
 
 public:
-	SwannProtocolDecoder();
+  SwannDC810BProtocolDecoder();
 
 	boolean decode(RFPacket* pPacket);
 	void	fillPacket(NinjaPacket* pPacket);
