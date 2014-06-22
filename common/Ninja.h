@@ -10,6 +10,7 @@
 #define ID_DISTANCE_SENSOR			10
 #define ID_ONBOARD_RF				11
 #define ID_SOUND_SENSOR				12
+#define ID_MOISTURE_SENSOR		225
 #define ID_STATUS_LED				999
 #define ID_RELAY_BOARD				1002
 #define ID_VERSION_NUMBER			1003
@@ -22,6 +23,7 @@
 #define ENCODING_OSV2		0x05
 #define ENCODING_BIND		0x06
 #define ENCODING_BOUTD		0x07
+#define ENCODING_B00		0x08
 
 
 #define VERSION	"\"V12_1.00\""

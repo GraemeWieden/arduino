@@ -25,6 +25,8 @@
 #include "../decoder/bOutDProtocolDecoder.h"
 #include "../encoder/bOutDProtocolEncoder.h"
 
+#include "../decoder/B00ProtocolDecoder.h"
+
 extern NinjaLED leds;
 
 OnBoardManager::OnBoardManager()
@@ -77,10 +79,14 @@ void OnBoardManager::check()
 				case 6:
 				m_Decoder = new bInDProtocolDecoder();
 				break;			
-			
-				case 7:
-				m_Decoder = new bOutDProtocolDecoder();
-				break;			
+
+        case 7:
+          m_Decoder = new bOutDProtocolDecoder();
+        break;
+
+        case 8:
+          m_Decoder = new B00ProtocolDecoder();
+        break;
 			}
 			
 			if(m_Decoder->decode(pReceivedPacket))
